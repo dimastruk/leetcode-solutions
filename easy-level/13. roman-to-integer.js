@@ -13,10 +13,10 @@ var symbols = {
     "M": 1000
 }
 
-var romanToInt = function(s) {
+var romanToInt = function (s) {
     var str = s.split("").reverse();
     str.unshift(0);
-    
-    return str.reduce((acc, val, index) => 
-                      acc + (symbols[val] * (index - 1 === 0 ? 1 : symbols[str[index - 1]] <= symbols[val] ? 1 : -1)));
+
+    return str.reduce((acc, val, index) =>
+        acc + (symbols[val] * (index - 1 === 0 ? 1 : symbols[str[index - 1]] <= symbols[val] ? 1 : -1)));
 };
